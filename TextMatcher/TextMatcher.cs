@@ -16,7 +16,7 @@ namespace TextMatcher
 				return new int[0];
 			}
 
-			for (int i = 0; i < textChars.Length - subtext.Length; i++)
+			for (int i = 0; i <= textChars.Length - subtext.Length; i++)
 			{
 				if (CharsMatch(textChars[i], subtextChars[0]))
 				{
