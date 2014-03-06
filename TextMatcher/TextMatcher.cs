@@ -11,15 +11,32 @@ namespace TextMatcher
 			var textChars = text.ToCharArray();
 			var subtextChars = subtext.ToCharArray();
 
+			
+
 			for (int i = 0; i < textChars.Length; i++)
 			{
-				if (textChars[i] == subtextChars[0])
+				if (CharsMatch(textChars[i], subtextChars[0]))
 				{
-					ret.Add(i + 1);
+					var match = true;
+					
+					for (int j = 0; j < subtextChars.Length; j++)
+					{
+						match = match && CharsMatch(textChars[i + j], subtextChars[j]);
+					}
+
+					if (match)
+					{
+						ret.Add(i + 1);
+					}
 				}
 			}
 
 			return ret.ToArray();
 		}
+
+	    private bool CharsMatch(char textChar, char subtextChar)
+	    {
+		    return textChar == subtextChar;
+	    }
     }
 }
