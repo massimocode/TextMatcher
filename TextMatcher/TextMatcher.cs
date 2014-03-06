@@ -36,7 +36,7 @@ namespace TextMatcher
 
 	    private bool CharsMatch(char textChar, char subtextChar)
 	    {
-		    return textChar == subtextChar;
+		    return char.ToLower(textChar) == char.ToLower(subtextChar);
 	    }
     }
 }
