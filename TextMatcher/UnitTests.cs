@@ -17,5 +17,15 @@ namespace TextMatcher
 
 			Assert.AreEqual(0, results.Length);
 		}
+
+		[TestMethod]
+		public void When_Given_The_Main_Text_And_The_Subtext_team_There_Should_Be_No_Matches()
+		{
+			var matcher = new TextMatcher();
+
+			var results = matcher.FindMatches(MainText, "team");
+
+			Assert.AreEqual(0, results.Length);
+		}
 	}
 }
