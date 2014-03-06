@@ -11,7 +11,10 @@ namespace TextMatcher
 			var textChars = text.ToCharArray();
 			var subtextChars = subtext.ToCharArray();
 
-			
+			if (subtextChars.Length == 0)
+			{
+				return new int[0];
+			}
 
 			for (int i = 0; i < textChars.Length; i++)
 			{
